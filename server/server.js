@@ -11,7 +11,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use( express.static( 'server/public' ) );
 
 // globals
-const port = 5000;
+// if process.env.PORT is undefined, use 5000
+const port = process.env.PORT || 5000;
 let stuff = [ 'meow', 'ribbet', 'woof', 'oink', 'moo', 'whinney', 'baaaaaah' ]
 
 // spin up server
