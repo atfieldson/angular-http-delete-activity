@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const repairRouter = require('./routes/repair.router.js');
 
-// makes the data avaiilable on req.body
+// makes the data available on req.body
 // bodyParser sets req.body = data;
 app.use(bodyParser.urlencoded({extended: true}));
 
