@@ -2,44 +2,45 @@ $( document ).ready( readyNow );
 let verbose = true;
 
 function readyNow(){
-    $( '#getButton' ).on( 'click', getStuff );
     // 'submit' is triggered when the user submits
     // the form.
-    $( '#noise-form' ).on( 'submit', sendNoiseToServer);
+    $( '#repair-form' ).on( 'submit', sendRepairToServer);
+    getCarRepairs();
 } // end readyNow
 
-function sendNoiseToServer(event) {
+function sendRepairToServer(event) {
     // browsers will refresh on form submit by default.
     // stop the page from refreshing with preventDefault
     event.preventDefault(); 
-    let noiseFromInput = $('#noise-input').val();
-    console.log(noiseFromInput);
+    let carFromInput = $('#car-input').val();
+    let milesFromInput = $('#miles-input').val();
+    let repairFromInput = $('#repair-input').val();
     $.ajax({
-       method: 'post',
-       url: '/addNoise',
-       data: {noise: noiseFromInput}
+        method: 'post',
+        url: '/repair',
+        data: { car: carFromInput, miles: milesFromInput, repair: repairFromInput}
     }).then(function(response) {
         console.log('success!!!!!', response);
-        getStuff();
+        getCarRepairs();
     }).catch(function(error){
-        alert('unable to add noise');
+        alert('unable to add repair');
         console.log(error);
     });
 }
 
-function getStuff(){
+function getCarRepairs(){
     if( verbose ) console.log( 'in getStuff' );
     $.ajax({
         method: 'GET',
-        url: '/stuff'
-    }).done( function( response ){
+        url: '/repair'
+    }).then( function( response ){
         if( verbose ) console.log( 'back from server with:', response );
         let outputElement = $( '#noisesOut' );
         outputElement.empty();
-        for( noise of response ){
-            outputElement.append( '<li>' + noise + '</li>' );
+        for( repair of response ){
+            outputElement.append('<li>' + repair.car + ' ' + repair.miles + ' ' + repair.repair + '</li>' );
         } // end for
-    }).fail( function( error ){
+    }).catch( function( error ){
         if( verbose ) console.log( 'error with AJAX request:', error );
     }) // end ajax
 } // end getStuff
