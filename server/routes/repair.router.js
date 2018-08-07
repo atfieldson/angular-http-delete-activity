@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+// Move this data into the database
 let carRepairs = [{car: 'Outback', miles: 147300, repair: 'Oil change'}];
 
 router.post('/', (req, res) => {
