@@ -34,7 +34,39 @@ router.post('/', (req, res) => {
     });
     //carRepairs.push(repairFromClient);
     // delivary confirmation
-})
+});
+
+router.get('/outback', (req, res) => {
+    // { search query }
+    Repair.find({car: 'Outback'}).then( (outbackRepairs) => {
+        res.send(outbackRepairs);
+    }).catch( (error) => {
+        res.sendStatus(500);
+    })
+});
+
+// Route parameter
+router.get('/search/:name', (req, res) => {
+    // req.params.name is whatever you put in the URL
+    // /repair/legacy then req.params.name = 'outback'
+    Repair.find({car: req.params.name}).then( (foundRepairs) => {
+        res.send(foundRepairs);
+    }).catch( (error) => {
+        res.sendStatus(500);
+    });
+});
+
+// localhost:5000/repair/miles/0/100000
+router.get('/miles/:start/:end', (req, res) => {
+    const startMiles = req.params.start; // 0
+    const endMiles = req.params.end; // 100000
+    Repair.find({miles: {$gt: startMiles, $lt: endMiles}})
+          .then( (foundInRange) => {
+            res.send(foundInRange);
+    }).catch( (error) => {
+        res.sendStatus(500);
+    })
+});
 
 // basic route for stuff
 router.get('/', (req, res) => {
