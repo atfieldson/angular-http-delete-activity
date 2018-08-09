@@ -1,6 +1,6 @@
-# jQuery to AngularJS Conversion
+# AngularJS PUT & DELETE
 
-In this activity you'll be taking code from earlier this week and converting it to AngularJS. You should only need to modify client side code for base mode. `app.use(bodyParser.json());` has already been added to the server.
+Take the code from lecture (this repository) and complete the client side portion of the DELETE.
 
 ## Setup
 
@@ -11,25 +11,7 @@ In this activity you'll be taking code from earlier this week and converting it 
 
 > NOTE: Everything should work correctly at this point. Try adding a few repairs before converting to AngularJS.
 
-## Base Mode
-
-Replace jQuery code withing the `client.js` with AngularJS. You will need to modify the `index.html` as well. Take **small steps**, test and **commit** at each step along the way. Work with your nieghbor to resolve any errors and ask questions when you get stuck.
-
-### AngularJS Form
-
-To use an HTML Form in AngularJS, you will need to use `ng-submit`.
-
-```HTML
-<form ng-submit="submit()">
-  Enter text and hit enter:
-  <input type="text" ng-model="text" name="text" />
-  <input type="submit" id="submit" value="Submit" />
-</form>
-```
-
 ### Checklist
-
-TODO: ADD YOUR CHECKLIST HERE
 
 - [x] Read through the README.md
 - [x] Source in AngularJS and add the `ng-app` directive
@@ -45,7 +27,7 @@ TODO: ADD YOUR CHECKLIST HERE
 - [x] Button and `ng-click` for client put
 - [x] DELETE server side
 - [ ] Button and `ng-click` for client delete
-...
+- [ ] Use `ng-class` to format the completed repairs differently from the non-completed ones
 
 ## Stretch Goals
 

@@ -9,7 +9,7 @@ const RepairSchema = new Schema({
     miles: {type: Number},
     repair: {type: String},
     cost: {type: Number},
-    complete: {type: Boolean}
+    complete: {type: Boolean, default: false}
 }); // Requires all data adhere to these types
 
 // This is a Model. It allows us to interface with the database.
