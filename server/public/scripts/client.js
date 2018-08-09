@@ -1,5 +1,14 @@
 const myApp = angular.module('CarApp', []);
 
+myApp.controller('CarController', function() {
+    // onReady for our controller
+    // ALL OF OUR CODE GOES HERE
+    console.log('CarController is ready');
+    const vm = this;
+});
+
+
+
 $( document ).ready( readyNow );
 
 function readyNow(){
