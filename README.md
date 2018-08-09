@@ -35,13 +35,16 @@ TODO: ADD YOUR CHECKLIST HERE
 - [x] Source in AngularJS and add the `ng-app` directive
 - [x] Create a controller directive and in the client.js
 - [x] Create a model for the inputs
-- [ ] Add `ng-submit` for the form
-- [ ] POST to the server with $http
-- [ ] Check Mongo to see if it worked
-- [ ] GET request to the server
-- [ ] `ng-repeat` over the response.data
+- [x] Add `ng-submit` for the form
+- [x] POST to the server with $http
+- [x] Check Mongo to see if it worked
+- [x] GET request to the server
+- [x] `ng-repeat` over the response.data
 
-- [ ] PUT & DELETE
+- [x] PUT server side
+- [x] Button and `ng-click` for client put
+- [x] DELETE server side
+- [ ] Button and `ng-click` for client delete
 ...
 
 ## Stretch Goals

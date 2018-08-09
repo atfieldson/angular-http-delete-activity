@@ -26,6 +26,15 @@ myApp.controller('CarController', function($http) {
     }
     getCarRepairs();
 
+    vm.completeRepair = function(repairId){
+        $http({
+            method: 'PUT',
+            url: '/repair/repairComplete/' + repairId
+        }).then(function(response) {
+            getCarRepairs();
+        })
+    }
+
     // FUNCTION DECLARATION
     function getCarRepairs() {
         console.log('HERE');

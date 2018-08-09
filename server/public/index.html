@@ -33,7 +33,6 @@
                 <input type="submit" value="submit">
             </form>
         </div>
-        {{vm.carData}}
         <table class="repair-table">
             <thead>
                 <tr>
@@ -41,10 +40,17 @@
                     <th>Miles</th>
                     <th>Repair</th>
                     <th>Cost</th>
+                    <th>Button</th>
                 </tr>
             </thead>
             <tbody id="repairs-output">
-
+                <tr ng-repeat="car in vm.carData">
+                    <td>{{car.car}}</td>
+                    <td>{{car.miles}}</td>
+                    <td>{{car.repair}}</td>
+                    <td>{{car.cost}}</td>
+                    <td><button ng-click="vm.completeRepair(car._id)">Increase Cost of Repair</button></td>
+                </tr>
             </tbody>
         </table>
     </div>
