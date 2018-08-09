@@ -1,5 +1,4 @@
 $( document ).ready( readyNow );
-let verbose = true;
 
 function readyNow(){
     // 'submit' is triggered when the user submits
@@ -12,13 +11,17 @@ function sendRepairToServer(event) {
     // browsers will refresh on form submit by default.
     // stop the page from refreshing with preventDefault
     event.preventDefault(); 
-    let carFromInput = $('#car-input').val();
-    let milesFromInput = $('#miles-input').val();
-    let repairFromInput = $('#repair-input').val();
+    const carFromInput = $('#car-input').val();
+    const milesFromInput = $('#miles-input').val();
+    const repairFromInput = $('#repair-input').val();
+    const costFromInput = $('#cost-input').val();
     $.ajax({
         method: 'post',
         url: '/repair',
-        data: { car: carFromInput, miles: milesFromInput, repair: repairFromInput}
+        data: { car: carFromInput, 
+                miles: milesFromInput, 
+                repair: repairFromInput,
+                cost: costFromInput }
     }).then(function(response) {
         console.log('success!!!!!', response);
         getCarRepairs();
@@ -28,19 +31,26 @@ function sendRepairToServer(event) {
     });
 }
 
+// AJAX request to get all car repairs from the server
 function getCarRepairs(){
-    if( verbose ) console.log( 'in getStuff' );
+    console.log( 'in getCarRepairs' );
     $.ajax({
         method: 'GET',
         url: '/repair'
     }).then( function( response ){
-        if( verbose ) console.log( 'back from server with:', response );
-        let outputElement = $( '#noisesOut' );
+        console.log( 'back from server with:', response );
+        let outputElement = $( '#repairs-output' );
         outputElement.empty();
         for( repair of response ){
-            outputElement.append('<li>' + repair.car + ' ' + repair.miles + ' ' + repair.repair + '</li>' );
+            const row = $('<tr></tr>');
+            row.append('<td>' + repair.car + '</td>');
+            row.append('<td>' + repair.miles + '</td>');
+            row.append('<td>' + repair.repair + '</td>');
+            row.append('<td>' + repair.cost + '</td>');
+            outputElement.append(row);
         } // end for
     }).catch( function( error ){
-        if( verbose ) console.log( 'error with AJAX request:', error );
+        alert('unable to get repairs');
+        console.log( 'error with AJAX request:', error );
     }) // end ajax
 } // end getStuff

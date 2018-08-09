@@ -7,7 +7,8 @@ const Schema = mongoose.Schema; // Similar to a Class
 const RepairSchema = new Schema({
     car: {type: String}, // car must be a string
     miles: {type: Number},
-    repair: {type: String}
+    repair: {type: String},
+    cost: {type: Number}
 }); // Requires all data adhere to these types
 
 // This is a Model. It allows us to interface with the database.

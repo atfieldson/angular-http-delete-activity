@@ -6,7 +6,8 @@ const repairRouter = require('./routes/repair.router.js');
 
 // makes the data available on req.body
 // bodyParser sets req.body = data;
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json()); // AngularJS
+app.use(bodyParser.urlencoded({extended: true})); // jQuery
 
 // uses
 app.use( express.static( 'server/public' ) );
@@ -19,7 +20,7 @@ const port = process.env.PORT || 5000;
 // Connect to Mongo using Mongoose
 const mongoose = require('mongoose');
 // Where is Mongo?
-const mongoURI = 'mongodb://localhost:27017/repairs';
+const mongoURI = 'mongodb://localhost:27017/cars';
 // 27017 is the PORT that Mongo is running on
 // repairs is what we are naming the database
 
