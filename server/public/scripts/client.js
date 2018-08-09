@@ -1,3 +1,5 @@
+const myApp = angular.module('CarApp', []);
+
 $( document ).ready( readyNow );
 
 function readyNow(){
