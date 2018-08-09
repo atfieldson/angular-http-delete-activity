@@ -32,9 +32,9 @@ To use an HTML Form in AngularJS, you will need to use `ng-submit`.
 TODO: ADD YOUR CHECKLIST HERE
 
 - [x] Read through the README.md
-- [ ] Source in AngularJS and add the `ng-app` directive
-- [ ] Create a controller directive and in the client.js
-- [ ] Create a model for the inputs
+- [x] Source in AngularJS and add the `ng-app` directive
+- [x] Create a controller directive and in the client.js
+- [x] Create a model for the inputs
 - [ ] Add `ng-submit` for the form
 - [ ] POST to the server with $http
 - [ ] Check Mongo to see if it worked

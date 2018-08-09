@@ -5,6 +5,13 @@ myApp.controller('CarController', function() {
     // ALL OF OUR CODE GOES HERE
     console.log('CarController is ready');
     const vm = this;
+    vm.carToAdd = {car: 'Outback', 
+                   miles: 12345, 
+                   repair:'tires', 
+                   cost: 800};
+
+    
+
 });
 
 

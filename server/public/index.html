@@ -20,13 +20,13 @@
             <form id="repair-form">
                 <!-- Input field -->
                 <label>Car:</label>
-                <input type="text" id="car-input" placeholder="e.g. Outback">
+                <input type="text" ng-model="vm.carToAdd.car" id="car-input" placeholder="e.g. Outback">
                 <br /> <label>Miles:</label>
-                <input type="number" id="miles-input" placeholder="e.g. 147330">
+                <input type="number" ng-model="vm.carToAdd.miles" id="miles-input" placeholder="e.g. 147330">
                 <br /> <label>Repair:</label>
-                <input type="text" id="repair-input" placeholder="e.g. Oil Change">
+                <input type="text" ng-model="vm.carToAdd.repair" id="repair-input" placeholder="e.g. Oil Change">
                 <br /> <label>Cost:</label>
-                <input type="number" id="cost-input" placeholder="e.g. 29.99" step="0.01">
+                <input type="number" ng-model="vm.carToAdd.cost" id="cost-input" placeholder="e.g. 29.99" step="0.01">
                 <br />
                 <!-- Creates a submit button -->
                 <input type="submit" value="submit">
