@@ -41,6 +41,7 @@
                     <th>Repair</th>
                     <th>Cost</th>
                     <th>Button</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody id="repairs-output">
@@ -50,6 +51,7 @@
                     <td><input ng-model="car.repair" /></td>
                     <td><input ng-model="car.cost" /></td>
                     <td><button ng-click="vm.updateRepair(car)">Update Car</button></td>
+                    <td><button ng-click="vm.deleteRepair(car)">Delete Car</button></td>
                 </tr>
             </tbody>
         </table>

@@ -41,5 +41,15 @@ carApp.controller('CarController', function ($http) {
         });
     }
 
+    vm.deleteRepair = function (carToDelete) {
+        console.log( 'in deleteRepair');
+        $http({
+            method: 'delete',
+            url: '/repair',
+            params: carToDelete
+        }).then(function(response){
+            vm.getCarRepairs();
+        });
+    }
     vm.getCarRepairs();
 });
