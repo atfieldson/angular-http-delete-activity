@@ -7,7 +7,7 @@ Take the code from lecture (this repository) and complete the client side portio
 1. Start mongo if not already running with `mongod`
 2. `npm install`
 3. `npm start`
-4. View [http://localhost:5000/]
+4. View [http://localhost:5000/](http://localhost:5000/)
 
 > NOTE: Everything should work correctly at this point. Try adding a few repairs before converting to AngularJS.
 

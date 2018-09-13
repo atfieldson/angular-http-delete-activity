@@ -16,10 +16,9 @@
     <div class="container" ng-controller="CarController as vm">
         <h1>AngularJS</h1>
         <h2>$HTTP DELETE Activity</h2>
-         Is angularjs working? {{1 === 1}}
+        Is angularjs working? {{1 === 1}}
         <div class="form-container">
-            <form id="repair-form" 
-                  ng-submit="vm.addCarRepair(vm.carToAdd)">
+            <form id="repair-form" ng-submit="vm.addCarRepair(vm.carToAdd)">
                 <!-- Input field -->
                 <label>Car:</label>
                 <input type="text" ng-model="vm.carToAdd.car" id="car-input" placeholder="e.g. Outback">
@@ -46,11 +45,11 @@
             </thead>
             <tbody id="repairs-output">
                 <tr ng-repeat="car in vm.carData">
-                    <td>{{car.car}}</td>
-                    <td>{{car.miles}}</td>
-                    <td>{{car.repair}}</td>
-                    <td>{{car.cost}}</td>
-                    <td><button ng-click="vm.completeRepair(car._id)">Increase Cost of Repair</button></td>
+                    <td><input ng-model="car.car" /></td>
+                    <td><input ng-model="car.miles" /></td>
+                    <td><input ng-model="car.repair" /></td>
+                    <td><input ng-model="car.cost" /></td>
+                    <td><button ng-click="vm.updateRepair(car)">Update Car</button></td>
                 </tr>
             </tbody>
         </table>
